@@ -8,10 +8,12 @@
       <div class="collapse navbar-collapse" id="navbarNavList">
         <ul class="navbar-nav ml-auto">
           <% if customer_signed_in? %>
-          <li></li>
+            <li></li>
           <% elsif admin_signed_in? %>
           <% else %>
-          <li></li>
+            <li>
+              <%= link_to "概要", about_path %>
+            </li>
           <% end %>
         </ul>
       </div>
