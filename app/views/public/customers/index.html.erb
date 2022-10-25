@@ -1,2 +1,29 @@
-<h1>Public::Customers#index</h1>
-<p>Find me in app/views/public/customers/index.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      会員一覧
+    </div>
+    <div class="col-md-6">
+      <table>
+        <thead>
+          <% @customers.each do |customer| %>
+          <tr>
+            <th>
+              メールアドレス
+              <%= customer.email %><br>
+            </th>
+            <th>
+              氏名(せい)
+              <%= customer.first_name %><br>
+            </th>
+            <th>
+              氏名（めい）
+              <%= customer.last_name %>
+            </th>
+          </tr>
+        <% end %>
+        </thead>
+      </table>
+    </div>
+  </div>
+</div>
