@@ -4,25 +4,35 @@
       会員一覧
     </div>
     <div class="col-md-6">
-      <table>
+      <table class="table">
         <thead>
           <% @customers.each do |customer| %>
           <tr>
             <th>
               メールアドレス
-              <%= customer.email %><br>
             </th>
             <th>
               氏名(せい)
-              <%= customer.first_name %><br>
             </th>
             <th>
               氏名（めい）
-              <%= customer.last_name %>
             </th>
           </tr>
-        <% end %>
         </thead>
+        <tbody>
+          <tr>
+            <td>
+              <%= customer.email %>
+            </td>
+            <td>
+              <%= link_to customer.first_name, customer_path(customer) %>
+            </td>
+            <td>
+              <%= customer.last_name %>
+            </td>
+          </tr>
+        </tbody>
+        <% end %>
       </table>
     </div>
   </div>
