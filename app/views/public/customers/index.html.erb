@@ -12,11 +12,9 @@
               メールアドレス
             </th>
             <th>
-              氏名(せい)
+              氏名(せい)　氏名（めい）
             </th>
-            <th>
-              氏名（めい）
-            </th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -25,10 +23,12 @@
               <%= customer.email %>
             </td>
             <td>
-              <%= link_to customer.first_name, customer_path(customer) %>
+              <%= link_to customer.name, customer_path(customer) %>
             </td>
             <td>
-              <%= customer.last_name %>
+              <% if customer_signed_in? && customer == current_customer %>
+                <%= link_to "編集", edit_customer_path(customer) %>
+              <% end %>
             </td>
           </tr>
         </tbody>

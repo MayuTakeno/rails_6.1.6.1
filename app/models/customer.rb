@@ -13,4 +13,7 @@ class Customer < ApplicationRecord
         has_many :follower, through: :reverse_of_relationships, source: :following
         # }
 
+        def name
+          first_name + last_name
+        end
 end
