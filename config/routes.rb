@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  namespace :public do
+    get 'arts/new'
+    get 'arts/index'
+    get 'arts/show'
+    get 'arts/edit'
+  end
   scope module: :public do
     resources :customers, only: [:index, :edit, :update, :show]
     # homes
